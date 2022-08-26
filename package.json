@@ -1,5 +1,6 @@
 {
-  "name": "seoul",
+  "homepage": "https://HNU209.github.io/NewYork-visualization",
+  "name": "newyork",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
