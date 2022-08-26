@@ -2,17 +2,18 @@ import React, { useEffect, useState } from 'react';
 import Trip from './Trip';
 import '../css/main.css';
 import Slider from '@mui/material/Slider';
+import Splash from './Splash';
 
 const axios = require('axios');
 
 const getTripData = time => {
-  const res = axios.get(`/data/visual_data/newyork_trips_${time}.json`);
+  const res = axios.get(`https://raw.githubusercontent.com/HNU209/NewYork-visualization/main/src/data/visual_data/newyork_trips_${time}.json`);
   const data = res.then(r => r.data);
   return data;
 };
 
 const getRestData = type => {
-  const res = axios.get(`/data/visualization_data/newyork_${type}.json`);
+  const res = axios.get(`https://raw.githubusercontent.com/HNU209/NewYork-visualization/main/src/data/visualization_data/newyork_${type}.json`);
   const result = res.then(r => r.data);
   return result
 }
@@ -123,8 +124,14 @@ export default function Main() {
 
   return (
     <div className="container">
-      <Trip trip={trip} empty={empty} ps={ps} minTime={minTime} maxTime={maxTime} time={time} setTime={setTime} setReset={setReset}></Trip>
-      <Slider id="slider" value={time} min={minTime} max={maxTime} onChange={SliderChange} track="inverted"/>
+      {loaded ? 
+      <>
+        <Trip trip={trip} empty={empty} ps={ps} minTime={minTime} maxTime={maxTime} time={time} setTime={setTime} setReset={setReset}></Trip>
+        <Slider id="slider" value={time} min={minTime} max={maxTime} onChange={SliderChange} track="inverted"/>
+      </>
+      :
+      <Splash></Splash>
+      }
     </div>
   );
 }

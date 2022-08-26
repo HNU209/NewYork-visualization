@@ -62,16 +62,12 @@ const ICON_MAPPING = {
 const currData = (data, time) => {
   const arr = [];
 
-  // console.log(data)
-
   Object.values(data).forEach(v => {
-    // console.log(v)
     const path = v.loc;
     const timestamp = v.timestamps;
     const [start, end] = timestamp;
 
     if ((time >= start) && (time <= end)) {
-      // console.log(time, start ,end)
       arr.push(path);
     }
   })
@@ -84,14 +80,6 @@ function renderLayers(props) {
   const trip = props.trip;
   const empty = props.empty;
   const ps = props.ps;
-
-  // console.log(trip)
-
-  // trip.forEach(v => {
-  //   if (v.vendor === 0) {
-  //     console.log(time, v.timestamps[0], v.timestamps[1])
-  //   }
-  // });
 
   const currEmpty = currData(empty, time);
   const currPs = currData(ps, time);
@@ -151,7 +139,7 @@ export default function Trip(props) {
   const minTime = props.minTime;
   const maxTime = props.maxTime;
 
-  const animationSpeed = 4;
+  const animationSpeed = 1.5;
   const time = props.time;
   const trip = props.trip;
   const empty = props.empty;
