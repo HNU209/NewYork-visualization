@@ -32,3 +32,11 @@
 #deckgl-wrapper {
     position: static;
 }
+.mapboxgl-ctrl-bottom-right {
+    display: none;
+  }
+.legend {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
