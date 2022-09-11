@@ -64,12 +64,12 @@ const currData = (data, time) => {
   const arr = [];
 
   Object.values(data).forEach(v => {
-    const path = v.path;
-    const timestamp = v.timestamp;
+    const path = v.loc;
+    const timestamp = v.timestamps;
     const [start, end] = timestamp;
 
     if ((time >= start) && (time <= end)) {
-      arr.push(v);
+      arr.push(path);
     }
   })
   return arr
@@ -96,8 +96,8 @@ function renderLayers(props) {
     new TripsLayer({
       id: 'trip',
       data: trip,
-      getPath: (d) => d.trip,
-      getTimestamps: (d) => d.timestamp,
+      getPath: (d) => d.trips,
+      getTimestamps: (d) => d.timestamps,
       getColor: (d) => 
       d.vendor === 0 ? theme.trailColor0 : theme.trailColor1,
       opacity: 0.3,
@@ -110,7 +110,7 @@ function renderLayers(props) {
     new ScatterplotLayer({
       id: 'scatterplot',
       data: currEmpty,
-      getPosition: (d) => d.path,
+      getPosition: (d) => [d[0], d[1]],
       getFillColor: (d) => [255, 255, 255],
       getRadius: (d) => 2,
       opacity: 0.3,
@@ -126,7 +126,7 @@ function renderLayers(props) {
       iconMapping: ICON_MAPPING,
       getIcon: (d) => 'marker',
       getSize: d => 1,
-      getPosition: (d) => d.path,
+      getPosition: (d) => [d[0], d[1]],
       getColor: d => [255, 255, 0],
       opacity: 0.9,
       pickable: false,
