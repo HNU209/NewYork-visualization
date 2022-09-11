@@ -32,7 +32,7 @@ export default function Main() {
     async function getFetchData() {
       const trip = await getTripData();
       const empty = await getRestData('empty_taxi');
-      const ps = await getRestData('ps_location');
+      const ps = await getRestData('passenger');
       
       if (trip && empty && ps) {
         setTrip(trip);
