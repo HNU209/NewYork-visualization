@@ -102,7 +102,7 @@ function renderLayers(props) {
       opacity: 0.3,
       widthMinPixels: 5,
       lineJointRounded: false,
-      trailLength: 1,
+      trailLength: 0.2,
       currentTime: time,
       shadowEnabled: false,
     }),
@@ -139,7 +139,7 @@ export default function Trip(props) {
   const minTime = props.minTime;
   const maxTime = props.maxTime;
 
-  const animationSpeed = 2;
+  const animationSpeed = 1;
   const time = props.time;
   const trip = props.trip;
   const empty = props.empty;
