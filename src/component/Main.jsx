@@ -7,13 +7,13 @@ import Splash from './Splash';
 const axios = require('axios');
 
 const getTripData = time => {
-  const res = axios.get(`/data/trip_data/newyork_trip_${time}.json`);
+  const res = axios.get(`https://raw.githubusercontent.com/HNU209/NewYork-visualization/main/src/data/trip_data/newyork_trip_${time}.json`);
   const data = res.then(r => r.data);
   return data;
 };
 
 const getRestData = type => {
-  const res = axios.get(`/data/rest_data/newyork_${type}.json`);
+  const res = axios.get(`https://raw.githubusercontent.com/HNU209/NewYork-visualization/main/src/data/rest_data/newyork_${type}.json`);
   const result = res.then(r => r.data);
   return result
 }
