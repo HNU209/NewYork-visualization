@@ -63,7 +63,9 @@ const ICON_MAPPING = {
 const currData = (data, time) => {
   const arr = [];
 
-  Object.values(data).forEach(v => {
+  console.log(typeof data)
+
+  data.forEach(v => {
     const path = v.path;
     const [start, end] = v.timestamp;
 
@@ -139,7 +141,7 @@ export default function Trip(props) {
   const minTime = props.minTime;
   const maxTime = props.maxTime;
 
-  const animationSpeed = 1;
+  const animationSpeed = 3;
   const time = props.time;
   const trip = props.trip;
   const empty = props.empty;
