@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/NewYork-visualization/static/css/main.62442ab0.css",
-    "main.js": "/NewYork-visualization/static/js/main.16114ca1.js",
+    "main.js": "/NewYork-visualization/static/js/main.805b59ea.js",
     "static/js/787.25902c8d.chunk.js": "/NewYork-visualization/static/js/787.25902c8d.chunk.js",
     "service-worker.js": "/NewYork-visualization/service-worker.js",
     "index.html": "/NewYork-visualization/index.html",
     "main.62442ab0.css.map": "/NewYork-visualization/static/css/main.62442ab0.css.map",
-    "main.16114ca1.js.map": "/NewYork-visualization/static/js/main.16114ca1.js.map",
+    "main.805b59ea.js.map": "/NewYork-visualization/static/js/main.805b59ea.js.map",
     "787.25902c8d.chunk.js.map": "/NewYork-visualization/static/js/787.25902c8d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.62442ab0.css",
-    "static/js/main.16114ca1.js"
+    "static/js/main.805b59ea.js"
   ]
 }
