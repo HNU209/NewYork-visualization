@@ -7,11 +7,8 @@ import Trip from "./components/Trip";
 import "./css/app.css";
 
 const fetchData = (FilE_NAME) => {
-//   const res = axios.get(
-//     `https://raw.githubusercontent.com/HNU209/NewYork-visualization/main/src/data/${FilE_NAME}.json`
-//   );
   const res = axios.get(
-    `data/${FilE_NAME}.json`
+    `https://raw.githubusercontent.com/HNU209/NewYork-visualization/main/src/data/${FilE_NAME}.json`
   );
   const data = res.then((r) => r.data);
   return data;
